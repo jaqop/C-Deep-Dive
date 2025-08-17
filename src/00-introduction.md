@@ -1,6 +1,12 @@
+# مقدمة
+
+مرحبًا بك في هذا المرجع المتكامل للغة C. هذا المشروع موجّه للمبتدئين والمحترفين على حد سواء، ويركّز على التطبيق العملي والأساليب الحديثة.
+
+
 \# Introduction to the C Language
 
 \_Created with passion by Yaqoub Al-Zofairi (Jaqopx)\_
+
 
 
 
