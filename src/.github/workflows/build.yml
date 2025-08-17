@@ -1,0 +1,29 @@
+name: Build and Export PDF
+
+on:
+  push:
+    paths:
+      - '**.md'
+      - '.github/workflows/build.yml'
+
+jobs:
+  export-pdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Pandoc
+        run: sudo apt-get update && sudo apt-get install -y pandoc texlive
+
+      - name: Convert README to PDF
+        run: |
+          mkdir output
+          pandoc README.md -o output/C-Deep-Dive.pdf --pdf-engine=xelatex
+
+      - name: Upload PDF as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: C-Deep-Dive-PDF
+          path: output/C-Deep-Dive.pdf
